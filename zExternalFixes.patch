@@ -1,0 +1,51 @@
+#engine [G1]
+    #patch [Fix AI_ReadyMeleeWeapon]
+        MemSet(0x00659232, '90', 9)
+    #/patch
+
+    #patch [Fix AI_ReadyRangedWeapon]
+        MemSet(0x00659312, '90', 9)
+    #/patch
+
+    #patch [Fix IntroduceChapter]
+        MemSet(0x0065e9af, '90', 9)
+    #/patch
+
+    #patch [Fix Tal_Configure]
+        MemSet(0x00654b6e, '90', 18)
+    #/patch
+
+    #patch [Fix Npc_SetTalentSkill]
+        MemSet(0x00654a29, '90', 15)
+    #/patch
+
+    #patch [Fix Npc_SetTalentValue]
+        MemSet(0x00654b09, '90', 15)
+    #/patch
+#/engine
+
+#engine [G2A]
+    #patch [Fix AI_ReadyMeleeWeapon]
+        MemSet(0x006efb79, '90', 10)
+    #/patch
+
+    #patch [Fix AI_ReadyRangedWeapon]
+        MemSet(0x006efcc9, '90', 10)
+    #/patch
+
+    #patch [Fix IntroduceChapter]
+        MemSet(0x006fb8aa, '90', 9)
+    #/patch
+
+    #patch [Fix Tal_Configure]
+        MemSet(0x006e6cd8, '90', 8)
+    #/patch
+
+    #patch [Fix Npc_SetTalentSkill]
+        MemSet(0x006e69cf, '90', 8)
+    #/patch
+
+    #patch [Fix Npc_SetTalentValue]
+        MemSet(0x006e6bdf, '90', 8)
+    #/patch
+#/engine
