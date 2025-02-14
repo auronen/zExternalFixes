@@ -17,11 +17,11 @@ namespace GOTHIC_NAMESPACE
 #if ENGINE == 1
         zCParser* parser = (zCParser*)reg.esi;
         if ((reg.edi == 0) || (reg.ebx == 0))
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
 #elif ENGINE == 4
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x18));
         if (reg.esi == 0 || (*(DWORD*)(reg.esp + 0x14) == 0))  {
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
         }
 #endif
     }
@@ -45,7 +45,7 @@ namespace GOTHIC_NAMESPACE
         if ((reg.edi == 0) || (reg.eax == 0))
             parser->SetReturn(false);
 #elif ENGINE == 4
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x18));
         if ((reg.esi == 0) || (*(DWORD*)(reg.esp + 0x14) == 0))
             parser->SetReturn(false);
 #endif
@@ -67,12 +67,11 @@ namespace GOTHIC_NAMESPACE
 #if ENGINE == 1
         zCParser* parser = (zCParser*)reg.esi;
         if ((reg.edi == 0) || (reg.eax == 0))
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
 #elif ENGINE == 4
-        // zCParser* parser = zCParser::GetParser();
         zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x18));
         if ((reg.esi == 0) || (*(DWORD*)(reg.esp + 0x14) == 0)) 
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
 #endif
 	}
 
@@ -93,11 +92,11 @@ namespace GOTHIC_NAMESPACE
 #if ENGINE == 1
         zCParser* parser = (zCParser*)reg.esi;
         if ((reg.edi == 0) || (reg.eax == 0))
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
 #elif ENGINE == 4
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x18));
         if ((reg.esi == 0) || (reg.esp == 0x3C))
-            parser->SetReturn(2);
+            parser->SetReturn(NPC_ATT_NEUTRAL);
 #endif
 	}
 
@@ -119,7 +118,7 @@ namespace GOTHIC_NAMESPACE
         if (reg.eax == 0)
             parser->SetReturn(false);
 #elif ENGINE == 4
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)reg.esi;
         if (reg.edi == 0)
             parser->SetReturn(false);
 #endif
@@ -211,7 +210,7 @@ namespace GOTHIC_NAMESPACE
         // Original function does not push a value to the data stack
         // if one of the parameters is not valid
         // If the parameter is not valid we return false
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)reg.ebp;
         if (reg.esi == reg.ebx)
             parser->SetReturn(false);
 	}
@@ -229,7 +228,7 @@ namespace GOTHIC_NAMESPACE
         // Original function does not push a value to the data stack
         // if one of the parameters is not valid
         // If the parameter is not valid we return invalid id (-1)
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x14));
         if (reg.esi == reg.ebx)
             parser->SetReturn(-1);
 	}
@@ -247,7 +246,7 @@ namespace GOTHIC_NAMESPACE
         // Original function does not push a value to the data stack
         // if one of the parameters is not valid
         // If the parameter is not valid we return invalid id (-1)
-        zCParser* parser = zCParser::GetParser();
+        zCParser* parser = (zCParser*)(*(DWORD*)(reg.esp + 0x14));
         if (reg.esi == reg.ebx)
             parser->SetReturn(-1);
 	}
