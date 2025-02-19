@@ -5,8 +5,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/")
 include(target_add_versioninfo)
 
 project(zExternalFix
-	DESCRIPTION "Union plugin for Gothic Games"
-	VERSION 1.0.0.0
+	DESCRIPTION "Fixes stack issues with external functions"
+	VERSION 0.8.0.0
 )
 
 set(CMAKE_CXX_STANDARD 17)

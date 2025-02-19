@@ -1,1 +1,0 @@
-- Fixed critical bug in gothic-api dependency (crashes on MP builds caused by improper registries handling)
